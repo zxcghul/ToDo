@@ -40,19 +40,6 @@ const clickDel = function(index) {
             todoList.append(li)
         }
         
-        // li.querySelector('.todo-complete').addEventListener('click', function() {
-        //     localStorage.clear();
-        //     item.completed = !item.completed
-        //     render()
-        //     localStorage.setItem('Verst', JSON.stringify(toDoData));
-        // })
-        // li.querySelector('.todo-remove').addEventListener('click', function () {
-        //     localStorage.clear();
-        //     li.remove();
-        //     toDoData.splice(index, 1);
-        //     render();
-        //     localStorage.setItem('Verst', JSON.stringify(toDoData));
-        // })
         li.querySelector('.todo-complete').addEventListener('click', function() {
             replacer(item)
         })
