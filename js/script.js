@@ -22,7 +22,6 @@ const clickDel = function(index) {
     localStorage.setItem('Verst', JSON.stringify(toDoData));
 }
 
-
   const render = function () {
     todoList.innerHTML = ''
     todoCompleted.innerHTML = ''
