@@ -8,18 +8,16 @@ let li = document.createElement('li');
 let todoItem, todoItemJSON, todoLOcalStorage;
 
 const replacer = function(obj) {
-    localStorage.clear();
-    obj.completed = !obj.completed
-    render()
-    localStorage.setItem('Verst', JSON.stringify(toDoData));
+    obj.completed = !obj.completed;
+    render();
+    // localStorage.setItem('Verst', JSON.stringify(toDoData));
 }
 
 const clickDel = function(index) {
-    localStorage.clear();
     li.remove();
     toDoData.splice(index, 1);
     render();
-    localStorage.setItem('Verst', JSON.stringify(toDoData));
+    // localStorage.setItem('Verst', JSON.stringify(toDoData));
 }
 
   const render = function () {
@@ -32,26 +30,26 @@ const clickDel = function(index) {
             `<div class="todo-buttons">` +
             `<button class="todo-remove"></button>` +
             `<button class="todo-complete"></button>` +
-            `</div>`
+            `</div>`;
         if (item.completed) {
-            todoCompleted.append(li)
+            todoCompleted.append(li);
         } else {
-            todoList.append(li)
+            todoList.append(li);
         }
         
         li.querySelector('.todo-complete').addEventListener('click', function() {
-            replacer(item)
+            replacer(item);
         })
 
         li.querySelector('.todo-remove').addEventListener('click', function () {
-            clickDel(index)
+            clickDel(index);
         })
     })
+    localStorage.setItem('Verst', JSON.stringify(toDoData));
  }
 
   todoControl.addEventListener('submit', function (event) {
     event.preventDefault();
-    localStorage.clear();
     if (headerInput.value === '') {
         return headerInput.style.background = '#CD5C5C';
     } else {
@@ -75,8 +73,8 @@ function renderStart() {
             toDoData.push(item);
         })
         render();
-    } 
-    
+    }     
 }
-renderStart()
+
+renderStart();
 
