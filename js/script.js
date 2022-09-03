@@ -14,7 +14,6 @@ const replacer = function(obj) {
 }
 
 const clickDel = function(index) {
-    li.remove();
     toDoData.splice(index, 1);
     render();
     // localStorage.setItem('Verst', JSON.stringify(toDoData));
